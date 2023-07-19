@@ -4,7 +4,7 @@ import { ClientDataTable } from './clients/ClientTable'
 
 function Clients() {
 
-  const { isSuccess, data } = useQuery({
+  const { isSuccess, data, refetch } = useQuery({
     queryKey: ["clients"],
     queryFn: getClients
   })
@@ -20,7 +20,7 @@ function Clients() {
             </div>
           </div>
           <div className='pt-10'>
-            <ClientDataTable clients={data.data} />
+            <ClientDataTable clients={data.data} refetch={refetch} />
           </div>
         </div>
       </>

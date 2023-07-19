@@ -12,7 +12,8 @@ import { Button } from "../../global/button"
 import { Link } from "react-router-dom"
 
 interface ClientTableProps {
-  clients: Client[]
+  clients: Client[],
+  refetch: () => void
 }
 
 export const ClientDataTable: React.FC<ClientTableProps> = (clientTableProps: ClientTableProps) => {
@@ -20,7 +21,8 @@ export const ClientDataTable: React.FC<ClientTableProps> = (clientTableProps: Cl
   let rows = clientTableProps.clients.map(item => {
 
     let deleteFunction = async (id: string) => {
-      deleteClient(id)
+      await deleteClient(id)
+      clientTableProps.refetch()
     }
 
     let showClientEndpoint = "/clients/" + item.id

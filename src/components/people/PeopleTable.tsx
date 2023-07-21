@@ -25,7 +25,7 @@ export const PeopleTable: React.FC<PeopleTableProps> = (peopleTableProps: People
         <TableCell>{person.status}</TableCell>
         <TableCell className="w-1/2">{skillBadgesPart}</TableCell>
         <TableCell>
-          <Button key={person.id} variant='destructive' onClick={_ => peopleTableProps.deleteFunction(person)}>Delete</Button>
+          <Button key={person.id} className='text-red-500' variant='outline' onClick={_ => peopleTableProps.deleteFunction(person)}>Delete</Button>
         </TableCell>
       </TableRow>
     )

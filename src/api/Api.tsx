@@ -37,6 +37,12 @@ export const API_PATHS = {
         addPerson: (slotId: string) => API_PATHS.routes.fillableSlot.routes.getOne(slotId) + "/people",
         deletePerson: (slotId: string, personId: string) => API_PATHS.routes.fillableSlot.routes.getOne(slotId) + "/people/" + personId
       }
+    },
+    stats: {
+      path: () => API_PATHS.baseUrl + "/api/v1/stats",
+      routes: {
+        getPeopleAllocations: () => API_PATHS.routes.stats.path() + "/people-allocations"
+      }
     }
   }
 }

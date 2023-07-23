@@ -50,7 +50,7 @@ export const FillableSlotTable: React.FC<FillableSlotTableProps> = (props: Filla
       .map(slotOption => {
         const person = peopleMap.get(slotOption.personId)
         return <>
-          <div className="flex"><div className="flex-auto py-2">{person?.name} {person?.surname} [{slotOption.fte}%]</div><Button onClick={() => hardbookFunction(slot.id, slotOption.personId)} variant='outline' className="ml-1 h-6 my-1">Hard book</Button><Button onClick={() => deletePersonFromSlotFunction(slot.id, slotOption.personId)} variant='destructive' className="ml-1 h-6 my-1">X</Button></div>
+          <div className="flex"><div className="flex-auto py-2">{person?.name} {person?.surname} [{slotOption.fte}%]</div><Button onClick={() => hardbookFunction(slot.id, slotOption.personId)} variant='default' className="ml-1 h-6 my-1">Hard book</Button><Button onClick={() => deletePersonFromSlotFunction(slot.id, slotOption.personId)} variant='destructive' className="ml-1 h-6 my-1">X</Button></div>
         </>
       })
 

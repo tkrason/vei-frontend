@@ -11,7 +11,7 @@ export interface Person {
   surname: string,
   skills: Skill[],
   hoursPerMonth: number,
-  status: PersonStatus,
+  status: PersonStatus, // TODO: Not used
 }
 
 export interface Skill {

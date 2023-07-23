@@ -20,7 +20,6 @@ export default function App() {
             <Route path='/clients/:id' Component={ClientDetail} />
             <Route path='/projects' Component={Projects} />
             <Route path='/projects/:id' Component={ProjectDetail} />
-            <Route path='/projects/:id/slot/:slotId' Component={FillableSlotDetail} />
             <Route path='/people' Component={People} />
           </Routes>
         </div>

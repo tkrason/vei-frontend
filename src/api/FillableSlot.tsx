@@ -1,5 +1,6 @@
 import axios from "axios"
 import { API_PATHS } from "./Api"
+import { Person } from "./People"
 
 export interface FillableSlotsResponseDto {
   data: FillableSlot[]
@@ -11,10 +12,21 @@ export interface FillableSlot {
   startDate: Date,
   endDate: Date,
   dailyRate: number,
-  requiredNumberOfFillables: number,
+  requiredNumberOfFillables: number, // Unused for now...
 
   belongsToProject: string,
-  poolOfPossibleFillables: string[],
+  poolOfPossibleFillables: SlotOption[],
+}
+
+export interface SlotOption {
+  personId: string,
+  state: SlotOptionState,
+  fte: number
+}
+
+export enum SlotOptionState {
+  PREBOOKED = 'PREBOOKED',
+  HARDBOOKED = 'HARDBOOKED'
 }
 
 export async function getFillableSlotsOnProject(projectId: string): Promise<FillableSlot[]> {
@@ -29,9 +41,28 @@ export async function getFillableSlot(slotId: string): Promise<FillableSlot> {
     .then(res => res.data)
 }
 
-export async function addPersonToSlot(slotId: string, personId: string): Promise<any> {
+export async function prebookPersonIntoSlot(slotId: string, personId: string): Promise<any> {
+
+  let body = { 
+    personId: personId,
+    state: SlotOptionState.PREBOOKED,
+    fte: 100
+  }
+
   return await axios
-    .post<FillableSlot>(API_PATHS.routes.fillableSlot.routes.addPerson(slotId), { personId: personId }, { headers: { Authorization: "Bearer apiKey" } })
+    .post<FillableSlot>(API_PATHS.routes.fillableSlot.routes.addPerson(slotId), body, { headers: { Authorization: "Bearer apiKey" } })
+}
+
+export async function hardbookPersonIntoSlot(slotId: string, personId: string): Promise<any> {
+
+  let body = { 
+    personId: personId,
+    state: SlotOptionState.HARDBOOKED,
+    fte: 100
+  }
+
+  return await axios
+    .post<FillableSlot>(API_PATHS.routes.fillableSlot.routes.addPerson(slotId), body , { headers: { Authorization: "Bearer apiKey" } })
 }
 
 export async function deletePersonFromSlot(slotId: string, personId: string): Promise<any> {

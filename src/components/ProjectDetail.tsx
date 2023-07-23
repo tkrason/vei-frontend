@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { FillableSlot, getFillableSlotsOnProject } from '../api/FillableSlot'
 import { Project, getProject } from '../api/Project'
 import { FillableSlotTable } from './fillable-slot/FillableSlotTable'
+import PeopleInSlot from './PeopleInSlot'
 
 function ProjectDetail() {
 
@@ -29,7 +30,7 @@ function ProjectDetail() {
       <div className='flex flex-col pt-8 pl-8'>
         <div>{projectDetailsPart}</div>
         <hr className='my-8'></hr>
-        <div>{projectFillableSlotsPart}</div>
+        <PeopleInSlot projectId={projectId}></PeopleInSlot>
       </div>
     </>
   )

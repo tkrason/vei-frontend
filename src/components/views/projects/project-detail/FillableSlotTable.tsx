@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom"
-import { FillableSlot, SlotOptionState, deleteFillableSlot, deletePersonFromSlot, hardbookPersonIntoSlot, prebookPersonIntoSlot } from "../../api/FillableSlot"
-import { Button } from "../../global/button"
-import { TableRow, TableCell, Table, TableBody, TableHead, TableHeader } from "../../global/components/ui/table"
-import { Person, getPeople } from "../../api/People"
+import { FillableSlot, SlotOptionState, deleteFillableSlot, deletePersonFromSlot, hardbookPersonIntoSlot, prebookPersonIntoSlot } from "../../../../api/FillableSlot"
+import { Button } from "../../../../global/button"
+import { TableRow, TableCell, Table, TableBody, TableHead, TableHeader } from "../../../../global/components/ui/table"
+import { Person, getPeople } from "../../../../api/People"
 import { useQuery } from "@tanstack/react-query"
-import AddPersonIntoSlotDialog from "../AddPersonIntoSlotDialog"
+import AddPersonIntoSlotDialog from "./AddPersonIntoSlotDialog"
 import { useMemo } from "react"
 
 interface FillableSlotTableProps {

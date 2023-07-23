@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
-import { getClients } from '../api/Client'
-import { ClientDataTable } from './clients/ClientTable'
+import { getClients } from '../../../api/Client'
+import { ClientDataTable } from './ClientTable'
 
-function Clients() {
+function AllClientsPage() {
 
   const { isSuccess, data, refetch } = useQuery({
     queryKey: ["clients"],
@@ -30,4 +30,4 @@ function Clients() {
   return <div>Loading...</div>
 }
 
-export default Clients
+export default AllClientsPage

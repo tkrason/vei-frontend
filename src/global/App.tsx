@@ -1,12 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
-import Clients from '../components/Clients'
-import Projects from '../components/Projects'
-import People from '../components/People'
-import ClientDetail from '../components/ClientDetail'
-import ProjectDetail from '../components/ProjectDetail'
-import FillableSlotDetail from '../components/FillableSlot'
-
+import AllClientsPage from '../components/views/clients/AllClientsPage'
+import AllProjectsPage from '../components/views/projects/AllProjectsPage'
+import AllPeoplePage from '../components/views/people/AllPeoplePage'
+import ClientDetail from '../components/views/clients/ClientDetail'
+import ProjectDetail from '../components/views/projects/project-detail/ProjectDetail'
 
 export default function App() {
   return (
@@ -15,12 +13,12 @@ export default function App() {
         <Sidebar />
         <div className='flex-auto grow'>
           <Routes>
-            <Route path='/' Component={Clients} />
-            <Route path='/clients' Component={Clients} />
+            <Route path='/' Component={AllClientsPage} />
+            <Route path='/clients' Component={AllClientsPage} />
             <Route path='/clients/:id' Component={ClientDetail} />
-            <Route path='/projects' Component={Projects} />
+            <Route path='/projects' Component={AllProjectsPage} />
             <Route path='/projects/:id' Component={ProjectDetail} />
-            <Route path='/people' Component={People} />
+            <Route path='/people' Component={AllPeoplePage} />
           </Routes>
         </div>
       </div>

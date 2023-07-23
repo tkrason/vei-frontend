@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
-import { Client, getClient } from '../api/Client';
-import { Project, getProjectsForClient } from '../api/Project';
-import ProjectsOnClientTable from './projects/ProjectsTable';
+import { Client, getClient } from '../../../api/Client';
+import { Project, getProjectsForClient } from '../../../api/Project';
+import ProjectsTable from '../projects/ProjectsTable';
 
 function ClientDetail() {
 
@@ -73,7 +73,7 @@ function getClientPart(isSuccess: boolean, data: Client | undefined) {
 
 function getProjectsTable(isSuccess: boolean, data: Project[] | undefined, refetch: () => void) {
   if (isSuccess && data) {
-    return <ProjectsOnClientTable projects={data} refetchProjects={refetch} showButtonLinkToClient={false} />
+    return <ProjectsTable projects={data} refetchProjects={refetch} showButtonLinkToClient={false} />
   } else {
     return <div>Loading projects data...</div>
   }

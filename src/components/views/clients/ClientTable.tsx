@@ -5,10 +5,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../global/components/ui/table"
+} from "../../../global/components/ui/table"
 
-import { Client, deleteClient } from "../../api/Client"
-import { Button } from "../../global/button"
+import { Client, deleteClient } from "../../../api/Client"
+import { Button } from "../../../global/button"
 import { Link } from "react-router-dom"
 
 interface ClientTableProps {

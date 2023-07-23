@@ -1,9 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
-import { getProjects } from '../api/Project'
-import ProjectsTable from './projects/ProjectsTable'
+import { getProjects } from '../../../api/Project'
+import ProjectsTable from './ProjectsTable'
 
-function Projects() {
+function AllProjectsPage() {
 
   const { isSuccess, data, refetch } = useQuery({
     queryKey: ["projects"],
@@ -30,4 +29,4 @@ function Projects() {
   )
 }
 
-export default Projects
+export default AllProjectsPage

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Project, deleteProject } from '../../api/Project'
-import { Button } from '../../global/button'
-import { TableRow, TableCell, Table, TableBody, TableHead, TableHeader } from '../../global/components/ui/table'
+import { Project, deleteProject } from '../../../api/Project'
+import { Button } from '../../../global/button'
+import { TableRow, TableCell, Table, TableBody, TableHead, TableHeader } from '../../../global/components/ui/table'
 
 interface ProjectsTableProps {
   projects: Project[],
@@ -10,7 +10,7 @@ interface ProjectsTableProps {
   showButtonLinkToClient: boolean
 }
 
-export const ProjectsOnClientTable: React.FC<ProjectsTableProps> = (projectsTableProps: ProjectsTableProps) => {
+export const ProjectsTable: React.FC<ProjectsTableProps> = (projectsTableProps: ProjectsTableProps) => {
 
   const rows = projectsTableProps.projects.map(project => {
 
@@ -85,4 +85,4 @@ export const ProjectsOnClientTable: React.FC<ProjectsTableProps> = (projectsTabl
 
 
 
-export default ProjectsOnClientTable
+export default ProjectsTable

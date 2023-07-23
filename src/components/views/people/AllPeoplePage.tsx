@@ -1,10 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
-import React from 'react'
-import { Person, deletePerson, getPeople } from '../api/People'
-import { PeopleTable } from './people/PeopleTable'
+import { Person, deletePerson, getPeople } from '../../../api/People'
+import { AllPeopleTable } from './AllPeopleTable'
 import { ScrollArea } from '@radix-ui/react-scroll-area'
 
-function People() {
+function AllPeoplePage() {
 
   const { isSuccess, data, refetch } = useQuery({
     queryKey: ['people'],
@@ -19,7 +18,7 @@ function People() {
       refetch()
     }
 
-    let table = <PeopleTable people={data} deleteFunction={deleteFunction} />
+    let table = <AllPeopleTable people={data} deleteFunction={deleteFunction} />
 
     return (
       <>
@@ -42,4 +41,4 @@ function People() {
   )
 }
 
-export default People
+export default AllPeoplePage

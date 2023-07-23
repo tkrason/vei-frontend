@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../global/components/ui/dialog'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../../../../global/components/ui/dialog'
 import { table } from 'console'
-import { Button } from '../global/button'
-import { Input } from '../global/components/ui/input'
-import { ScrollArea } from '../global/components/ui/scroll-area'
-import { Person, getPeople } from '../api/People'
+import { Button } from '../../../../global/button'
+import { Input } from '../../../../global/components/ui/input'
+import { ScrollArea } from '../../../../global/components/ui/scroll-area'
+import { Person, getPeople } from '../../../../api/People'
 import { SelectPersonForSlotTable } from './SelectPersonForSlotTable'
 import { useQuery } from '@tanstack/react-query'
-import People from './People'
+import AllPeoplePage from '../../people/AllPeoplePage'
 
 interface AddPersonIntoSlotDialogProps {
   slotId: string,

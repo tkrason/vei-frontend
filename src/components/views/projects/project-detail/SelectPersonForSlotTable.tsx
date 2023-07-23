@@ -1,9 +1,9 @@
 import React from 'react'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../global/components/ui/table'
-import { Person } from '../api/People'
-import { hardbookPersonIntoSlot, prebookPersonIntoSlot } from '../api/FillableSlot'
-import { Button } from '../global/button'
-import { createSkillBadges } from './people/PeopleTable'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../../global/components/ui/table'
+import { Person } from '../../../../api/People'
+import { hardbookPersonIntoSlot, prebookPersonIntoSlot } from '../../../../api/FillableSlot'
+import { Button } from '../../../../global/button'
+import { createSkillBadges } from '../../people/AllPeopleTable'
 
 interface SelectPersonForSlotTable {
   peopleToChooseFrom: Person[],

@@ -1,16 +1,14 @@
-import { Link } from "react-router-dom"
-import { Person, Skill, SkillSeniority, deletePerson } from "../../api/People"
-import { Button } from "../../global/button"
-import { TableRow, TableCell, TableBody, TableHead, TableHeader, Table } from "../../global/components/ui/table"
-import { Badge } from "../../global/components/ui/badge"
-import debounce from 'lodash.debounce';
+import { Person, Skill, SkillSeniority } from "../../../api/People"
+import { Button } from "../../../global/button"
+import { TableRow, TableCell, TableBody, TableHead, TableHeader, Table } from "../../../global/components/ui/table"
+import { Badge } from "../../../global/components/ui/badge"
 
 interface PeopleTableProps {
   people: Person[],
   deleteFunction: (person: Person) => void
 }
 
-export const PeopleTable: React.FC<PeopleTableProps> = (peopleTableProps: PeopleTableProps) => {
+export const AllPeopleTable: React.FC<PeopleTableProps> = (peopleTableProps: PeopleTableProps) => {
 
   let rows = peopleTableProps.people.map(person => {
 

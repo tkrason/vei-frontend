@@ -3,7 +3,7 @@ import { Button } from "../../../../global/button"
 import { TableRow, TableCell, Table, TableBody, TableHead, TableHeader } from "../../../../global/components/ui/table"
 import { Person, getPeople } from "../../../../api/People"
 import { useQuery } from "@tanstack/react-query"
-import AddPersonIntoSlotDialog from "./AddPersonIntoSlotDialog"
+import AddPeopleIntoSlotDialog from "./AddPeopleIntoSlotDialog"
 import { useMemo } from "react"
 
 interface FillableSlotTableProps {
@@ -74,7 +74,7 @@ export const FillableSlotTable: React.FC<FillableSlotTableProps> = (props: Filla
         <TableCell>{slot.startDate.toString()}</TableCell>
         <TableCell>{slot.endDate?.toString() || "no end"}</TableCell>
         <TableCell>
-          <AddPersonIntoSlotDialog slotId={slot.id} isSuccessAllPeople={isSuccess} allPeople={allPeopleWithoutPeopleInSlot} refetchSlots={props.refetchSlots} />
+          <AddPeopleIntoSlotDialog slotId={slot.id} isSuccessAllPeople={isSuccess} allPeople={allPeopleWithoutPeopleInSlot} refetchSlots={props.refetchSlots} />
         </TableCell>
         <TableCell className="align-top w-auto">
           <div className="flex flex-col">

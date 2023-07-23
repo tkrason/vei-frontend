@@ -2,8 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import { getFillableSlotsOnProject } from '../../../../api/FillableSlot'
 import { Button } from '../../../../global/button'
-import { FillableSlotTable } from './FillableSlotTable'
-import { getPeople } from '../../../../api/People'
+import { FillableSlotTable } from './SlotManagementTable'
 
 interface PeopleInSlotProps {
   projectId: string

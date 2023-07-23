@@ -11,7 +11,7 @@ interface SelectPersonForSlotTable {
   refetchSlots: () => void
 }
 
-export const SelectPersonForSlotTable: React.FC<SelectPersonForSlotTable> = (props: SelectPersonForSlotTable) => {
+export const AddPeopleIntoSlotTable: React.FC<SelectPersonForSlotTable> = (props: SelectPersonForSlotTable) => {
   
   let rows = props.peopleToChooseFrom.map(person => {
 

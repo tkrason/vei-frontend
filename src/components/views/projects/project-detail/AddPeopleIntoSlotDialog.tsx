@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../../../../global/components/ui/dialog'
-import { table } from 'console'
 import { Button } from '../../../../global/button'
 import { Input } from '../../../../global/components/ui/input'
 import { ScrollArea } from '../../../../global/components/ui/scroll-area'
-import { Person, getPeople } from '../../../../api/People'
-import { SelectPersonForSlotTable } from './SelectPersonForSlotTable'
-import { useQuery } from '@tanstack/react-query'
-import AllPeoplePage from '../../people/AllPeoplePage'
+import { Person } from '../../../../api/People'
+import { AddPeopleIntoSlotTable } from './AddPeopleIntoSlotTable'
 
 interface AddPersonIntoSlotDialogProps {
   slotId: string,
@@ -16,11 +13,11 @@ interface AddPersonIntoSlotDialogProps {
   refetchSlots: () => void
 }
 
-export const AddPersonIntoSlotDialog: React.FC<AddPersonIntoSlotDialogProps> = (props: AddPersonIntoSlotDialogProps) => {
+export const AddPeopleIntoSlotDialog: React.FC<AddPersonIntoSlotDialogProps> = (props: AddPersonIntoSlotDialogProps) => {
 
   const [filter, setFilter] = useState("")
 
-  const table = props.isSuccessAllPeople ? <SelectPersonForSlotTable slotId={props.slotId} peopleToChooseFrom={props.allPeople.filter((person: Person) => filterPerson(person, filter))} refetchSlots={props.refetchSlots} /> :
+  const table = props.isSuccessAllPeople ? <AddPeopleIntoSlotTable slotId={props.slotId} peopleToChooseFrom={props.allPeople.filter((person: Person) => filterPerson(person, filter))} refetchSlots={props.refetchSlots} /> :
     <div>Loading all people</div>
 
   return (
@@ -50,4 +47,4 @@ const filterPerson = (person: Person, activeFilter: string) => {
 }
 
 
-export default AddPersonIntoSlotDialog
+export default AddPeopleIntoSlotDialog
